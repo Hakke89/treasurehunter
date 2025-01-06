@@ -32,7 +32,7 @@ module.exports = {
             },
             {
                 test: /\.css$/, // Handle CSS files
-                use: ["css-loader"],
+                use: ["style-loader", "css-loader"],
             },
             {
                 test: /\.(png|jpe?g|gif|svg|woff2?|eot|ttf|otf)$/i,
