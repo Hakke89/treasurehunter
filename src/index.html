@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure hunter</title>
+    <link rel="icon" href="img/favicon-32x32.png" type="image/x-icon" />
+    <script src="bundle.js" defer></script> <!-- Webpack will generate this file -->
+</head>
+
+<body>
+    <div class="whitespace">-</div>
+    <div class="wrapper">
+        <header>
+            <h1>Treasure hunter</h1>
+            <h2>Get the <span class="treasure">treasures</span> before the pirate gets you!</h2>
+        </header>
+
+        <!-- GAME FORM UI -->
+        <form id="gameForm">
+            <!-- Amount of Lives -->
+            <label for="livesInput">Amount of Lives</label>
+            <select id="livesInput" name="lives" required>
+                <option value="5">5</option>
+                <option value="4">4</option>
+                <option value="3" selected>3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+            </select>
+
+            <!-- Grid Dimensions -->
+            <label for="gridDimensionsInput">Grid Dimensions</label>
+            <select id="gridDimensionsInput" name="gridDimensions" required>
+                <!-- 3 Square Grids -->
+                <option value="300x300">15 x 15</option>
+                <option value="500x500">25 x 25</option>
+
+                <!-- 2 Rectangular Grids -->
+                <option value="500x300">15 x 25</option>
+                <option value="900x500">25 x 50</option>
+            </select>
+
+            <!-- Number of Walls -->
+            <label for="wallsInput">Number of Walls</label>
+            <select id="wallsInput" name="walls" required>
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30" selected>30</option>
+                <option value="50">50</option>
+                <option value="75">75</option>
+                <option value="100">100</option>
+            </select>
+
+            <!-- Number of Treasures -->
+            <label for="treasuresInput">Number of Treasures</label>
+            <select id="treasuresInput" name="treasures" required>
+                <option value="5" selected>5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+            </select>
+
+            <!-- Number of enemies -->
+            <label for="enemiesInput">Number of Enemies</label>
+            <select id="enemiesInput" name="enemies" required>
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+
+            <!-- Game speed slow, medium, fast form radiobutton -->
+            <label for="gameSpeedInput">Game Speed:</label>
+            <div>
+                <input type="radio" id="slow" name="gameSpeed" value="slow">
+                <label for="slow">Lazy pirate</label>
+            </div>
+            <div>
+                <input type="radio" id="medium" name="gameSpeed" value="medium" checked>
+                <label for="medium">Regular Pirate</label>
+            </div>
+            <div>
+                <input type="radio" id="fast" name="gameSpeed" value="fast">
+                <label for="fast">Hardcore pirate</label>
+            </div>
+
+            <!-- Start Game Button -->
+            <button class="btn" type="submit">Start Game</button>
+        </form>
+
+        <!-- THE GAME UI -->
+        <div id="game-section" class="flex-columns">
+            <canvas id="gameCanvas"></canvas>
+            <section class="score_and_log">
+                <div class="score">
+                    <h3 class="score_and_log_title">Score:</h3>
+                    <h4 id="lives">Lives: <span id="livesDisplay"></span></h4>
+                    <h4 class="treasures">Treasures: <span id="treasureDisplay"></span></h4>
+                    <h3 class="score_and_log_title">Game log:</h3>
+                </div>
+                <div class="scrollable-div">
+                    <ul id="messageDisplay">
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <!-- Reset Game Button -->
+        <button class="btn" id="resetBtn" role="button">Reset this game</button>
+
+        <!-- start new game -->
+        <button class="btn" id="newGameBtn" role="button">Make new game</button>
+    </div>
+    <footer>&copy; Hannes Vandelaer 2024</footer>
+</body>
+
+</html>

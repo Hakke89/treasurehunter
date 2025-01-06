@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "target": "ES6",                    // Specifies the target ECMAScript version
+      "module": "ES6",                    // Use ES6 module resolution
+      "moduleResolution": "node",         // Resolve modules using Node.js style
+      "outDir": "./dist",                 // Output directory for compiled files
+      "sourceMap": true,                  // Generate source maps for debugging
+      "strict": true,                     // Enable strict type-checking options
+      "jsx": "react",                     // Support JSX (if needed for React later)
+      "esModuleInterop": true             // Enable compatibility with CommonJS modules
+    },
+    "include": ["src/**/*"],              // Files to include in compilation
+    "exclude": ["node_modules"]           // Exclude dependencies
+  }

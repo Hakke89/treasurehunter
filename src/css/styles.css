@@ -1,0 +1,169 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: pirate-font;
+    src: url("../fonts/TheRumIsGone.ttf") format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    background-image: url("../img/old_map.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #f5dcb4;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.whitespace {
+    display: block;
+    height: 1rem;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 0 auto;
+    padding: 1rem 1rem;
+    background-color: #f5dcb4;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+h1 {
+    font-family: pirate-font, Arial, sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+h2 {
+    font-family: pirate-font;
+    font-size: 1.2rem;
+    margin-bottom: 3.5rem;
+}
+
+/* FORM SECTION */
+form#gameForm {
+    display: grid;
+    grid-template-columns: [start] 1fr [end];
+    font-family: inherit;
+    margin: 0 auto;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+select {
+    font-family: inherit;
+    padding: 0.1rem;
+    margin-bottom: 0.5rem;
+    max-width: 10rem;
+}
+
+
+.btn {
+    font-family: inherit;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    width: 10rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgb(45, 45, 45);
+    color: white;
+}
+
+.treasure {
+    color: rgb(161, 122, 23);
+}
+
+/* GAME SECTION */
+
+div#game-section {
+    display: none;
+}
+
+.flex-columns {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+#gameCanvas {
+    flex-shrink: 0;
+    display: block;
+    border: 2px solid black;
+}
+
+#resetBtn {
+    display: none;
+}
+
+#newGameBtn {
+    display: none;
+}
+
+.score_and_log {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    /* fixed width */
+    width: 280px;
+}
+
+.score_and_log_title {
+    flex-shrink: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.scrollable-div {
+    flex-grow: 1;
+    overflow-y: scroll;
+    background-color: black;
+    border: 2px solid black;
+    color: white;
+    min-height: 0;
+    height: 0;
+    width: 280px;
+}
+
+footer {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+ul#messageDisplay {
+    list-style-type: none;
+}
+
+li {
+    padding: 0 1rem 0 0.1rem;
+}
