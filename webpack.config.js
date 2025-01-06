@@ -32,7 +32,7 @@ module.exports = {
             },
             {
                 test: /\.css$/, // Handle CSS files
-                use: ["style-loader", "css-loader"],
+                use: ["css-loader"],
             },
             {
                 test: /\.(png|jpe?g|gif|svg|woff2?|eot|ttf|otf)$/i,
@@ -44,6 +44,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./src/index.html", // Template for the output HTML
             filename: "index.html", // Output HTML filename
+            favicon: "./src/img/favicon.png",
         }),
     ],
     optimization: isProduction
